@@ -67,7 +67,7 @@ def main():
 		except Exception:
 			print('Not Vulnerability.')
 	else:
-		print('Usage: python3 FastAdmin.py url cookie')
+		print('Usage: python3 FastAdmin.py url cookie.')
 
 if __name__ == "__main__":
 	main()
