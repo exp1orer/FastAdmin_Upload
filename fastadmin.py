@@ -62,12 +62,12 @@ def main():
 	banner()
 	if len(sys.argv) == 2:
 		try:
-			headers['Cookie'] = input('Cookie >')
+			headers['Cookie'] = input('Cookie > ')
 			upload_chunk(sys.argv[1])
 		except Exception:
 			print('Not Vulnerability.')
 	else:
-		print('Usage: python3 FastAdmin.py url cookie.')
+		print('Usage: python3 FastAdmin.py url')
 
 if __name__ == "__main__":
 	main()
