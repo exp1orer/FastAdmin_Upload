@@ -33,7 +33,6 @@ def upload_chunk(url):
 		upload_url,
 		headers = headers,
 		files = file,
-		proxies = {'http': 'http://127.0.0.1:8080'},
 		data = data_
 	)
 	result = loads(resp.text)
