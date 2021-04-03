@@ -25,7 +25,7 @@ def upload_chunk(url):
 	}
 	chunk_id = time()
 	data_ = {
-		'chunkid': '%d.php' % chunk_id,
+		'chunkid': '../../public/%d.php' % chunk_id,
 		'chunkindex': 0,
 		'chunkcount': 1
 	}
@@ -33,6 +33,7 @@ def upload_chunk(url):
 		upload_url,
 		headers = headers,
 		files = file,
+		proxies = {'http': 'http://127.0.0.1:8080'},
 		data = data_
 	)
 	result = loads(resp.text)
@@ -45,7 +46,7 @@ def upload_chunk(url):
 def merge_file(url, chunk_id):
 	data_ = {
 		'action': 'merge',
-		'chunkid': '%d.php' % chunk_id,
+		'chunkid': '../../public/%d.php' % chunk_id,
 		'chunkindex': 0,
 		'chunkcount': 1,
 		'filename': '%d.php-0.part' % chunk_id
