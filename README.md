@@ -10,3 +10,5 @@ Usage: python fastadmin.py url
 ## 漏洞原理分析
 
 [FastAdmin前台文件上传 - 先知社区](https://xz.aliyun.com/t/9395)
+
+**如您在使用本工具的过程中存在任何非法行为，您需自行承担相应后果，作者将不承担任何法律及连带责任。**
